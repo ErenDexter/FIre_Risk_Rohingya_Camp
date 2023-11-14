@@ -14,15 +14,15 @@ warnings.filterwarnings('ignore')
 
 XGB = XGBClassifier()
 
-dIndices_ranges = [-0.0859, 0.0153, 0.2529]
+dIndices_ranges = [-0.0449, 0.0559, 0.0881]
 
 # mother_dataset = pd.read_csv('new_dataset.csv')
 
 # training_dataset = mother_dataset[['OID_', 'pointid', 'grid_code', 'NDVI', 'NDVIre1n', 'NDVIre2n', 'NDVIre3n', 'NDBI', 'NBR', 'NBR2', 'CSI', 'BSI', 'Elevation', 'Slope', 'Aspect', 'dCSI']]
 
-training_dataset_path = 'XGB_dIndices_dataset/08_11_23_dCSI_Dataset.csv'
-parameter_to_train = 'dCSI'
-parameter_cat = 'dCSI_cat'
+training_dataset_path = 'XGB_dIndices_dataset/08_11_23_dNDVI_dNDBI_Avg_Dataset.csv'
+parameter_to_train = 'dNDVI_dNDBI_divided_by_2'
+parameter_cat = 'dNDVI_dNDBI_divided_by_2_cat'
 
 training_dataset = pd.read_csv(training_dataset_path)
 

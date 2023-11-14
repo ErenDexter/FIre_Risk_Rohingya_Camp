@@ -11,9 +11,9 @@ warnings.filterwarnings('ignore')
 
 XGB = XGBClassifier()
 
-training_dataset_path = 'XGB_dIndices_dataset/08_11_23_dNBR2_Dataset.csv'
-parameter_to_train = 'dNBR2'
-parameter_cat = 'dNBR2_cat'
+training_dataset_path = 'XGB_dIndices_dataset/08_11_23_dNDVI_dNDBI_Avg_Dataset.csv'
+parameter_to_train = 'dNDVI_dNDBI_divided_by_2'
+parameter_cat = 'dNDVI_dNDBI_divided_by_2_cat'
 
 def fitness_function(solution):
     if (solution[2] > solution[1] and solution[1] > solution[0]):
