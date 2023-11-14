@@ -14,13 +14,13 @@ warnings.filterwarnings('ignore')
 
 XGB = XGBClassifier()
 
-dIndices_ranges = [-0.4906, -0.296, 0.08]
+dIndices_ranges = [-0.0859, 0.0153, 0.2529]
 
 # mother_dataset = pd.read_csv('new_dataset.csv')
 
 # training_dataset = mother_dataset[['OID_', 'pointid', 'grid_code', 'NDVI', 'NDVIre1n', 'NDVIre2n', 'NDVIre3n', 'NDBI', 'NBR', 'NBR2', 'CSI', 'BSI', 'Elevation', 'Slope', 'Aspect', 'dCSI']]
 
-training_dataset_path = 'dIndices_dataset/19_10_23_Master_Dataset_dCSI.csv'
+training_dataset_path = 'XGB_dIndices_dataset/08_11_23_dCSI_Dataset.csv'
 parameter_to_train = 'dCSI'
 parameter_cat = 'dCSI_cat'
 
@@ -49,6 +49,10 @@ model = XGB.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 print(f"\nTesting Accuracy: {accuracy_score(y_test, y_pred)}")
+
+report = classification_report(y_test, y_pred, output_dict=False)
+print(report)
+
 
 plot_importance(model)
 pyplot.show()

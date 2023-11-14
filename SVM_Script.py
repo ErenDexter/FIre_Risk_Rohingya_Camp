@@ -11,7 +11,7 @@ import seaborn as sns
 
 SVM = SVC(kernel='linear')
 
-dIndices_ranges = [-0.01, 0.1, 0.208]
+dIndices_ranges = [-0.0859, 0.153, 0.2529]
 
 # mother_dataset = pd.read_csv('new_dataset.csv')
 
@@ -47,6 +47,7 @@ model = SVM.fit(X_train, y_train)
 
 pred = model.predict(X_test)
 
-report = classification_report(y_test, pred, output_dict=True)
+report = classification_report(y_test, pred, output_dict=False)
+print(report)
 
-print(report['weighted avg']['precision'])
+#print(report['weighted avg']['precision'])
